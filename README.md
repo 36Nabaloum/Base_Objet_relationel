@@ -126,3 +126,19 @@ FROM documents d,
      TABLE(r.nom_auteur) a
 WHERE a.nom_auteurs = 'Nom Auteur Recherché'
    OR d.entete.mots_cles = 'Mot Clé Recherché';
+
+```
+
+🎯 Objectifs pédagogiques
+Approfondir la modélisation orientée objet dans les systèmes de gestion de base de données.
+
+Structurer un modèle hiérarchisé complexe (nested types).
+
+Pratiquer des requêtes avec types imbriqués et structures avancées.
+
+Démontrer la maîtrise de Oracle SQL avancé.
+---
+👨‍💻 Auteur
+Emile NABALOUM
+Spécialiste des systèmes d'information, SQL & Power BI
+📫 emi.nabaloum@gmail.com
