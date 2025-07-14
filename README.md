@@ -40,6 +40,48 @@ CREATE TYPE t_document AS OBJECT (
 );
 
 
+
+
+> ⚠️ **Attention** : Ne laisse pas de texte ou saut de ligne entre les trois backticks (```) et le mot `sql`.
+
+---
+
+### ✅ 2. Ne pas mettre trop de lignes dans un seul bloc
+
+Si ton script dépasse 100–150 lignes, sépare-le en plusieurs parties pour plus de lisibilité :
+- Partie 1 : création des objets `auteur`, `entete`, `paragraphes`
+- Partie 2 : insertion
+- Partie 3 : requêtes d’extraction
+
+---
+
+### ✅ 3. Échapper certains caractères
+
+Tu peux aussi avoir besoin d’échapper les chevrons (`<`, `>`) ou d’éviter certains caractères spéciaux dans des blocs si tu ajoutes HTML plus tard.
+
+---
+
+### ✅ Exemple propre et lisible dans un README
+
+```sql
+-- Création du type auteur
+CREATE TYPE t_auteurs AS OBJECT (
+    nom_auteurs VARCHAR(50),
+    affiliation VARCHAR(50)
+);
+
+-- Suite d’auteurs
+CREATE TYPE Suiteauteurs AS TABLE OF t_auteurs;
+
+-- Création de l'entête
+CREATE TYPE t_entete AS OBJECT (
+    titre_ent VARCHAR(50), 
+    auteurs Suiteauteurs, 
+    mots_cles VARCHAR(50),
+    date_creation DATE
+);
+
+
 📌 Requête d'exemple
 SELECT d.nom
 FROM documents d,
